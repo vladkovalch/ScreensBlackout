@@ -10,17 +10,22 @@
   <PropertyGroup>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
   </PropertyGroup>
 
   <PropertyGroup>
     <Version>1.0.0</Version>
     <Authors>Vlad K</Authors>
     <Description>This application is designed to black out screens in multi-screen setups.</Description>
+    <ApplicationIcon>Resources\screens-blackout-icon-256x256.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\screens-blackout-icon-256x256.ico" />
   </ItemGroup>
 
 </Project>
