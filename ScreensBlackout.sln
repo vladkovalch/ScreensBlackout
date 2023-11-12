@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreensBlackout", "ScreensBlackout\ScreensBlackout.csproj", "{1A66D705-99B7-41B9-BF48-18C8C25CE601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreensBlackout.Tests", "ScreensBlackout.Tests\ScreensBlackout.Tests.csproj", "{183F9C00-6044-483F-9AF1-A98CB19D584A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A66D705-99B7-41B9-BF48-18C8C25CE601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A66D705-99B7-41B9-BF48-18C8C25CE601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A66D705-99B7-41B9-BF48-18C8C25CE601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A66D705-99B7-41B9-BF48-18C8C25CE601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{183F9C00-6044-483F-9AF1-A98CB19D584A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{183F9C00-6044-483F-9AF1-A98CB19D584A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{183F9C00-6044-483F-9AF1-A98CB19D584A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{183F9C00-6044-483F-9AF1-A98CB19D584A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3CEAA32-844C-46D0-B8A2-6EC8EA74884E}
+	EndGlobalSection
+EndGlobal
