@@ -22,4 +22,4 @@ For more convenient use, you can create a shortcut and set a key bind from the p
 Obviously, you can use it however you want, but I find it especially useful to put on when stepping away from your OLED screen, as can help prevent burn-in problems.
 
 Or... it can serve as a perfect screensaver when scheduling a nightly shutdown!\
-Just schedule the [shutdown](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown), put on some relaxing music, enable this screen saver, and enjoy and enjoy a good night's sleep 😴
+Just schedule the [shutdown](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown), put on some relaxing music, enable this screen saver, and enjoy a good night's sleep 😴
