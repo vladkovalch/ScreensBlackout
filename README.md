@@ -2,7 +2,7 @@
 <table>
     <tr>
         <td><img src="/ScreensBlackout/Resources/screens-blackout-icon-256x256.ico" width="32"></td>
-        <td><b>ScreensBlackout is a really simple tool that is designed to, well..., black out screens in multi-screen setups.<b/></td>
+        <td><b>ScreensBlackout</b> is a really simple tool that is designed to, well..., black out screens in multi-screen setups.</td>
     </tr>
 </table>
 
