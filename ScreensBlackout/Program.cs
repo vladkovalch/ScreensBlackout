@@ -14,8 +14,8 @@ namespace ScreensBlackOut
     /// </summary>
     public class Program
     {
-        private static ICursorAutoHideTimer _cursorHider = new CursorAutoHideTimer();
-        private static IScreenBasedFormFactory _screenBasedFormFactory = new BlackoutFormFactory();
+        private static readonly ICursorAutoHideTimer _cursorHider = new CursorAutoHideTimer();
+        private static readonly IScreenBasedFormFactory _screenBasedFormFactory = new BlackoutFormFactory();
 
         /// <summary>
         /// Defines the entry point of the application.
@@ -23,30 +23,37 @@ namespace ScreensBlackOut
         [STAThread]
         static void Main()
         {
+            if (!SingleInstanceAppHelper.EnsureSingleInstance())
+            {
+                return; // All instances including this one are terminated if another instance is running.
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Creating a new form for each screen that will be used to black them out.
-            foreach (var screen in Screen.AllScreens)
-            {
-                CreateAndShowBlackoutForm(screen);
-            }
+            CreateAndShowBlackOverlays();
 
             Application.Run();
+
+            // Release the mutex when the application is closing.
+            SingleInstanceAppHelper.ReleaseMutex();
         }
 
         /// <summary>
-        /// Creates the and show blackout form.
+        /// Creates and displays a black overlay over each window on the screen.
         /// </summary>
-        /// <param name="screen">The screen.</param>
-        private static void CreateAndShowBlackoutForm(Screen screen)
+        private static void CreateAndShowBlackOverlays()
         {
-            var blackOutForm = _screenBasedFormFactory.CreateFrom(screen);
+            foreach (var screen in Screen.AllScreens)
+            {
+                var blackOutForm = _screenBasedFormFactory.CreateFrom(screen);
 
-            var eventHandlerSetup = new BlackoutFormWithCursorEventHandlerSetup(_cursorHider, blackOutForm, Application.Exit);
-            eventHandlerSetup.InitializeEventHandlers();
+                var eventHandlerSetup = new BlackoutFormWithCursorEventHandlerSetup(_cursorHider, blackOutForm, Application.Exit);
+                eventHandlerSetup.InitializeEventHandlers();
 
-            blackOutForm.Show();
+                blackOutForm.Show();
+            }
         }
     }
 }
