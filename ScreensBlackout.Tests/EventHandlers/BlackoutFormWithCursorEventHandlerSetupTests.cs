@@ -26,7 +26,7 @@ namespace ScreensBlackout.Tests.EventHandlers
             var eventHandlerSetup = new BlackoutFormWithCursorEventHandlerSetup(cursorHiderMock.Object, testableForm, action);
 
             // Act
-            eventHandlerSetup.Setup();
+            eventHandlerSetup.InitializeEventHandlers();
 
             testableForm.TriggerKeyDown(new KeyEventArgs(Keys.Escape));
 
@@ -45,7 +45,7 @@ namespace ScreensBlackout.Tests.EventHandlers
             var eventHandlerSetup = new BlackoutFormWithCursorEventHandlerSetup(cursorHiderMock.Object, testableForm, action);
 
             // Act
-            eventHandlerSetup.Setup();
+            eventHandlerSetup.InitializeEventHandlers();
 
             testableForm.TriggerMouseUp(new MouseEventArgs(MouseButtons.Left, 1, 1, 1, 0));
 
