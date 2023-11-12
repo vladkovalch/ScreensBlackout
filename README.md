@@ -12,7 +12,7 @@
 
 ### How It Works and How to Use It
 The way it works is by placing a black overlay over your screens. The application exits once you click or press a button.\
-The reason it's implemented that way is to avoid using your resources when you don't need that functionality, allowing you to trigger as needed.
+The reason it's implemented that way is to avoid using your system resources when you don't need that functionality, allowing you to trigger as needed.
 
 For more convenient use, you can create a shortcut and set a key bind from the properties window, or – if you're using a macro pad – program it to execute the .exe file, where one press would activate the overlay, and a second would remove it.
 
