@@ -1,5 +1,5 @@
 ﻿using ScreensBlackout.Interfaces;
-using System.Runtime.InteropServices;
+using ScreensBlackout.Interop;
 using Timer = System.Windows.Forms.Timer;
 
 namespace ScreensBlackout.Helpers
@@ -9,9 +9,6 @@ namespace ScreensBlackout.Helpers
     /// </summary>
     public class CursorAutoHideTimer : ICursorAutoHideTimer
     {
-        [DllImport("user32.dll")]
-        public static extern void ShowCursor(bool show);
-
         private Timer? _timer;
         private bool _cursorVisible = true;
 
@@ -51,7 +48,7 @@ namespace ScreensBlackout.Helpers
         {
             if (!_cursorVisible)
             {
-                ShowCursor(true);
+                NativeMethods.ShowCursor(true);
                 _cursorVisible = true;
             }
 
@@ -93,7 +90,7 @@ namespace ScreensBlackout.Helpers
         {
             if (_cursorVisible)
             {
-                ShowCursor(false);
+                NativeMethods.ShowCursor(false);
                 _cursorVisible = false;
             }
 

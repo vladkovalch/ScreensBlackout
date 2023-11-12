@@ -33,6 +33,11 @@ namespace ScreensBlackout.Factories
                 formInstance.Bounds = screen.Bounds;
             }
 
+            formInstance.Shown += (sender, args) =>
+            {
+                formInstance.Activate();
+            };
+
             return formInstance;
         }
     }

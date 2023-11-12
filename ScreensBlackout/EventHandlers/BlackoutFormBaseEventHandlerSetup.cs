@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using ScreensBlackout.Interop;
+using System.Windows.Forms;
 
 namespace ScreensBlackout.EventHandlers
 {
@@ -28,6 +29,10 @@ namespace ScreensBlackout.EventHandlers
         {
             Form.KeyDown += (sender, args) => CloseAction();
             Form.MouseUp += (sender, args) => CloseAction();
+            Form.Load += (sender, e) =>
+            {
+                NativeMethods.BringWindowToFront(Form.Handle);
+            };
 
             SetupCustomEventHandlers();
         }
