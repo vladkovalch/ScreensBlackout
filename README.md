@@ -6,7 +6,7 @@
     </tr>
 </table>
 
-<img src="/docs/images/demo.gif" width="828"/>
+<img src="/docs/images/demo.gif" width="827"/>
 
 <br/>
 
