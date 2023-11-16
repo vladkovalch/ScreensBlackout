@@ -2,7 +2,7 @@
 
 namespace ScreensBlackout.Interop
 {
-    public static class NativeMethods
+    internal static class NativeMethods
     {
         /// <summary>
         /// Sets the foreground window.
@@ -26,6 +26,11 @@ namespace ScreensBlackout.Interop
         /// <param name="windowHandle">The window handle.</param>
         public static void BringWindowToFront(IntPtr windowHandle)
         {
+            if (windowHandle == IntPtr.Zero)
+            {
+                return;
+            }
+
             SetForegroundWindow(windowHandle);
         }
     }

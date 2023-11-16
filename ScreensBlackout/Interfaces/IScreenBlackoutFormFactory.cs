@@ -8,10 +8,12 @@ namespace ScreensBlackout.Interfaces
     public interface IScreenBasedFormFactory
     {
         /// <summary>
-        /// Creates a <see cref="Form"/> instance based on screen parameters.
+        /// Creates a <see cref="Form" /> instance with bounds set based on screen parameters.
         /// </summary>
         /// <param name="screen">The screen.</param>
-        /// <returns>A <see cref="Form"/> instance.</returns>
+        /// <returns>
+        /// A <see cref="Form" /> instance.
+        /// </returns>
         Form CreateFrom(Screen screen);
     }
 }

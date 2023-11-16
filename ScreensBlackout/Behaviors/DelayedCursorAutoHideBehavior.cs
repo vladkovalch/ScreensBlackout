@@ -2,12 +2,13 @@
 using ScreensBlackout.Interop;
 using Timer = System.Windows.Forms.Timer;
 
-namespace ScreensBlackout.Helpers
+namespace ScreensBlackout.Behaviors
 {
     /// <summary>
-    /// Used to start a 3-minute timer to hide the mouse cursor.
+    /// Implements the <see cref="ICursorAutoHideBehavior"/> to provide a delayed cursor auto-hide functionality.
     /// </summary>
-    public class CursorAutoHideTimer : ICursorAutoHideTimer
+    /// <seealso cref="ScreensBlackout.Interfaces.ICursorAutoHideBehavior" />
+    public class DelayedCursorAutoHideBehavior : ICursorAutoHideBehavior
     {
         private Timer? _timer;
         private bool _cursorVisible = true;
@@ -23,7 +24,7 @@ namespace ScreensBlackout.Helpers
         /// <summary>
         /// Initializes a new instance of the <see cref="CursorAutoHideTimer"/> class.
         /// </summary>
-        public CursorAutoHideTimer()
+        public DelayedCursorAutoHideBehavior()
         {
             _timer = new Timer
             {
@@ -34,26 +35,19 @@ namespace ScreensBlackout.Helpers
         }
 
         /// <summary>
-        /// Starts the timer.
+        /// Applies the automatic hide behavior.
         /// </summary>
-        public void StartTimer()
+        public void ApplyAutoHideBehavior()
         {
-            _timer!.Start();
+            StartTimer();
         }
 
         /// <summary>
-        /// Resets the timer.
+        /// Handles user activity.
         /// </summary>
-        public void ResetTimer()
+        public void OnUserActivity()
         {
-            if (!_cursorVisible)
-            {
-                NativeMethods.ShowCursor(true);
-                _cursorVisible = true;
-            }
-
-            _timer!.Stop();
-            _timer.Start();
+            ResetTimer();
         }
 
         /// <summary>
@@ -75,10 +69,34 @@ namespace ScreensBlackout.Helpers
             {
                 if (_timer != null)
                 {
+                    _timer.Stop();
                     _timer.Dispose();
                     _timer = null;
                 }
             }
+        }
+
+        /// <summary>
+        /// Starts the timer.
+        /// </summary>
+        private void StartTimer()
+        {
+            _timer!.Start();
+        }
+
+        /// <summary>
+        /// Resets the timer.
+        /// </summary>
+        private void ResetTimer()
+        {
+            if (!_cursorVisible)
+            {
+                NativeMethods.ShowCursor(true);
+                _cursorVisible = true;
+            }
+
+            _timer!.Stop();
+            _timer.Start();
         }
 
         /// <summary>
