@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace ScreensBlackout.Tests.Factiries
 {
+    /// <summary>
+    /// Defines the contract for a blackout form overlay builder.
+    /// </summary>
     public interface IScreenBlackoutFormOverlayBuilder
     {
         IScreenBlackoutFormOverlayBuilder BasedOnScreenBounds(Rectangle screenBounds);

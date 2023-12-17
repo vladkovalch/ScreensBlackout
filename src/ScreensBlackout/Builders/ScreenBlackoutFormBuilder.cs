@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace ScreensBlackout.Builders
 {
     /// <summary>
-    ///  Builder class for creating a screen blackout form overlay.
+    /// Builder class for creating a screen blackout form overlay.
     /// </summary>
     public class ScreenBlackoutFormOverlayBuilder : IScreenBlackoutFormOverlayBuilder
     {
